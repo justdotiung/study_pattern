@@ -102,13 +102,13 @@ class CreateStore {
     }
 }
 const reducer = (state = { key: 1, count: 1 }, action) => {
-    console.log(state);
     switch (action.type) {
         case "AAAA":
             return Object.assign(Object.assign({}, state), { key: state.key + action.payload });
         case "BBB":
             return Object.assign(Object.assign({}, state), { count: state.count + action.payload });
     }
+    return state;
 };
 const createStore = new CreateStore(reducer);
 createStore.subscribe(function () {
@@ -118,6 +118,6 @@ createStore.dispatch({ type: "AAAA", payload: 1 });
 createStore.dispatch({ type: "AAAA", payload: 1 });
 createStore.dispatch({ type: "AAAA", payload: 1 });
 createStore.dispatch({ type: "BBB", payload: 100 });
-createStore.dispatch({ type: "BBB", payload: 100 });
-createStore.dispatch({ type: "BBB", payload: 100 });
+createStore.dispatch({ type: "CCC", payload: 100 });
+createStore.dispatch({ type: "CCC", payload: 100 });
 console.log(createStore.getState());

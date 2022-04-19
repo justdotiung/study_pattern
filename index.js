@@ -1,2 +1,3 @@
-import { Client } from "./Observer.js";
-new Client();
+import { Main } from "./Singleton.js";
+// new Client();
+new Main();
